@@ -1,4 +1,6 @@
 local status_ok, toggleterm = pcall(require, "toggleterm")
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
 if not status_ok then
 	return
 end
@@ -37,3 +39,43 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new({cmd  = "lazygit",hidden = true})
+-- Move to previous/next
+map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
+map('n', '<c-,>', ':BufferPrevious<CR>', opts)
+map('n', '<c-;>', ':BufferNext<CR>', opts)
+-- Re-order to previous/next
+map('n', '<c-<>', ':BufferMovePrevious<CR>', opts)
+map('n', '<c->>', ':BufferMoveNext<CR>', opts)
+-- Goto buffer in position...
+map('n', '<c-&>', ':BufferGoto 1<CR>', opts)
+map('n', '<c-é>', ':BufferGoto 2<CR>', opts)
+map('n', '<c-">', ':BufferGoto 3<CR>', opts)
+map('n', "<c-'>", ':BufferGoto 4<CR>', opts)
+map('n', '<c-(>', ':BufferGoto 5<CR>', opts)
+map('n', '<c-§>', ':BufferGoto 6<CR>', opts)
+map('n', '<c-è>', ':BufferGoto 7<CR>', opts)
+map('n', '<c-!>', ':BufferGoto 8<CR>', opts)
+map('n', '<c-ç>', ':BufferGoto 9<CR>', opts)
+map('n', '<c-à>', ':BufferLast<CR>', opts)
+-- Pin/unpin buffer
+map('n', '<c-p>', ':BufferPin<CR>', opts)
+-- Close buffer
+map('n', '<c-bc>', ':BufferClose<CR>', opts)
+-- Wipeout buffer
+--                 :BufferWipeout
+-- Close commands
+--                 :BufferCloseAllButCurrent
+--                 :BufferCloseAllButPinned
+--                 :BufferCloseAllButCurrentOrPinned
+--                 :BufferCloseBuffersLeft
+--                 :BufferCloseBuffersRight
+-- Magic buffer-picking mode
+map('n', '<C-p>', ':BufferPick<CR>', opts)
+-- Sort automatically by...
+map('n', '<Space>bb', ':BufferOrderByBufferNumber<CR>', opts)
+map('n', '<Space>bd', ':BufferOrderByDirectory<CR>', opts)
+map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
+map('n', '<Space>bw', ':BufferOrderByWindowNumber<CR>', opts)
+
+-- toggle term
+vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>")

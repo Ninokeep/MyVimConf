@@ -15,7 +15,6 @@ return require('packer').startup(function(use)
 	})
 	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
 	use('nvim-treesitter/playground')
-	use('theprimeagen/harpoon')
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
 	use {
@@ -40,17 +39,25 @@ return require('packer').startup(function(use)
 		}
 	}
 
-	use {'akinsho/bufferline.nvim', tag = "v3.*"}
-	use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
-  require("toggleterm").setup()
-     end}
-	 use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-}
+	use { 'akinsho/bufferline.nvim', tag = "v3.*" }
+	use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
+		require("toggleterm").setup()
+	end }
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
 	use 'nvim-tree/nvim-web-devicons'
-	use 'm4xshen/autoclose.nvim'
-	use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
+	--use 'm4xshen/autoclose.nvim'
+	use { 'romgrk/barbar.nvim', wants = 'nvim-web-devicons' }
 	use 'nvim-tree/nvim-tree.lua'
+	use {
+		'kylechui/nvim-surround',
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require('nvim-surround').setup({})
 
+		end
+	}
+	use 'm4xshen/autoclose.nvim'
 end)

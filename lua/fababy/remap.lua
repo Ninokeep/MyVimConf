@@ -77,7 +77,6 @@ vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>")
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<leader>sv", "<C-w>v") -- split verticaly
 vim.keymap.set("n", "<leader>sh", "<C-w>s")
-vim.keymap.set("n", "<leader>se", "<C-w>v")
 vim.keymap.set("n", "<leader>sx", ":close<CR>")
 -- array
 vim.keymap.set("n", "vii", "vi[")

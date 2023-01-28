@@ -1,9 +1,10 @@
 require 'nvim-treesitter.configs'.setup {
 	-- A list of parser names, or "all"
-	ensure_installed = { "help", "scss", "css", "markdown", "html", "javascript", "typescript", "tsx", "c", "lua", "python","yaml","svelte","dockerfile" },
+	ensure_installed = { "help", "scss", "css", "markdown", "html", "javascript", "typescript", "tsx", "c", "lua", "python",
+		"yaml", "svelte", "dockerfile" },
 	autotag = {
 		enable = true,
-		filetype = {"html","xml","tsx","jsx","typescriptreact","javascriptreact","svelte"}
+		filetype = { "html", "xml", "tsx", "jsx", "typescriptreact", "javascriptreact", "svelte" }
 	},
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = false,

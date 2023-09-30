@@ -13,6 +13,13 @@ return require('packer').startup(function(use)
 			vim.cmd('colorscheme rose-pine')
 		end
 	})
+
+	use({
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+		requires = "nvim-treesitter/nvim-treesitter",
+	})
+
 	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
 	use('nvim-treesitter/playground')
 	use('mbbill/undotree')
@@ -60,4 +67,5 @@ return require('packer').startup(function(use)
 		end
 	}
 	use 'm4xshen/autoclose.nvim'
+	use { 'neoclide/coc.nvim', branch = 'release' }
 end)

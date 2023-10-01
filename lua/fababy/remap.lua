@@ -54,7 +54,9 @@ map('n', '<c-à>', ':BufferLast<CR>', opts)
 -- Pin/unpin buffer
 map('n', '<c-p>', ':BufferPin<CR>', opts)
 -- Close buffer
-map('n', '<c-bc>', ':BufferClose<CR>', opts)
+map('n', '<c-c>', ':BufferClose<CR>', opts)
+-- Show buffers
+map('n', '<leader>bf', ':buffers<CR>', opts)
 -- Wipeout buffer
 --                 :BufferWipeout
 -- Close commands
@@ -81,4 +83,4 @@ vim.keymap.set("n", "<leader>se", "<C-w>v")
 vim.keymap.set("n", "<leader>sx", ":close<CR>")
 -- array
 vim.keymap.set("n", "vii", "vi[")
--- save file 
+-- save file

@@ -1,5 +1,5 @@
 -- Set barbar's options
-require 'bufferline'.setup {
+require 'barbar'.setup {
 	-- Enable/disable animations
 	animation = true,
 
@@ -35,18 +35,18 @@ require 'bufferline'.setup {
 	-- if set to 'both', will show buffer index and icons in the tabline
 	icons = {
 		diagnostics = {
-		-- you can use a list
-		{ enabled = true, icon = 'ﬀ' }, -- ERROR
-		{ enabled = true }, -- WARN
-		{ enabled = false }, -- INFO
-		{ enabled = true }, -- HINT
+			-- you can use a list
+			{ enabled = true, icon = 'ﬀ' }, -- ERROR
+			{ enabled = true }, -- WARN
+			{ enabled = false }, -- INFO
+			{ enabled = true }, -- HINT
 
-		-- OR `vim.diagnostic.severity`
-		[vim.diagnostic.severity.ERROR] = { enabled = true, icon = 'ﬀ' },
-		[vim.diagnostic.severity.WARN] = { enabled = true },
-		[vim.diagnostic.severity.INFO] = { enabled = false },
-		[vim.diagnostic.severity.HINT] = { enabled = true }
-	},
+			-- OR `vim.diagnostic.severity`
+			[vim.diagnostic.severity.ERROR] = { enabled = true, icon = 'ﬀ' },
+			[vim.diagnostic.severity.WARN] = { enabled = true },
+			[vim.diagnostic.severity.INFO] = { enabled = false },
+			[vim.diagnostic.severity.HINT] = { enabled = true }
+		},
 		filetype = {
 			enabled = true
 		},
@@ -89,7 +89,7 @@ require 'bufferline'.setup {
 
 	-- Sets the maximum buffer name length.
 	maximum_length = 30,
-
+	min_length = 30,
 	-- If set, the letters for each buffer in buffer-pick mode will be
 	-- assigned based on their name. Otherwise or in case all letters are
 	-- already assigned, the behavior is to assign letters in order of

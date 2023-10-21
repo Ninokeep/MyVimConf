@@ -4,6 +4,10 @@ require'lspconfig'.lua_ls.setup{
       runtime = {
         version = "LuaJIT"
       }
+	  ,
+	  diagnostics = {
+		  globals = {'vim'}
+	  }
     }
   }
 }

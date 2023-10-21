@@ -31,7 +31,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- execute script
 -- python
--- vim.keymap.set("n","<C-m>", ":w !python3<CR>"
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
